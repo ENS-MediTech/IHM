@@ -1,0 +1,56 @@
+/* Style de la bande du haut */
+header {
+    background-color: #7bc5e1; /* Bleu clair */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Style du titre dans la bande du haut */
+  header h1 {
+    color: #0e406f; /* Bleu foncé */
+  }
+  
+  /* Style des champs de texte */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 400px; /* Ajustez selon vos besoins */
+    margin: 20px auto;
+  }
+  
+  /* Style des noms des catégories sur le côté gauche */
+  .form-label {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  /* Style des champs de saisie */
+  .form-input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Style du bouton de soumission */
+  .form-submit {
+    background-color: #4caf50; /* Couleur verte */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .form-submit:hover {
+    background-color: #45a049; /* Couleur verte plus foncée au survol */
+  }
+  .insert{
+    background-color: #4caf50; /* Couleur verte */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
