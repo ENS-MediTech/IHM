@@ -62,24 +62,65 @@
 			<option value="janvier">Janvier</option>
 			<option value="fevrier">Février</option>
 			<option value="mars">Mars</option>
+			<option value="avril">Avril</option>
+			<option value="mai">Mai</option>
+			<option value="juin">Juin</option>
+			<option value="juillet">Juillet</option>
+			<option value="aout">Aout</option>
+			<option value="septembre">Septembre</option>
+			<option value="octobre">Octobre</option>
+			<option value="novembre">Novembre</option>
+			<option value="Decembre">Décembre</option>
+		</select>
+		<select id="mois" name="mois">
+			<option value="janvier">Janvier</option>
+			<option value="fevrier">Février</option>
+			<option value="mars">Mars</option>
+			<option value="avril">Avril</option>
+			<option value="mai">Mai</option>
+			<option value="juin">Juin</option>
+			<option value="juillet">Juillet</option>
+			<option value="aout">Aout</option>
+			<option value="septembre">Septembre</option>
+			<option value="octobre">Octobre</option>
+			<option value="novembre">Novembre</option>
+			<option value="Decembre">Décembre</option>
 		</select>
 		<h2>Frais au forfait</h2>
-		<label for="repas">Repas midi :</label>
-		<input type="number" id="repas" name="repas" min="0" required>
-		<label for="nuitee">Nuitée :</label>
-		<input type="number" id="nuitee" name="nuitee" min="0" required>
-		<label for="etape">Etape :</label>
-		<input type="number" id="etape" name="etape" min="0" required>
-		<label for="km">Km :</label>
-		<input type="number" id="km" name="km" min="0" value="250" readonly>
-		<label for="situation">Situation :</label>
-		<input type="radio" id="valide" name="situation" value="valide" checked>
-		<label for="valide">Validé</label>
-		<input type="radio" id="non-valide" name="situation" value="non-valide">
-		<label for="non-valide">Non validé</label>
-		<label for="justificatifs">Nb Justificatifs :</label>
-		<input type="number" id="justificatifs" name="justificatifs" min="0">
-		<input type="submit" value="Soumettre la requête">
+		<table border="1">
+			<tr>
+			  <td><label for="repas">Repas midi :</label></td>
+			  <td><input type="number" id="repas" name="repas" min="0" required></td>
+			</tr>
+			<tr>
+			  <td><label for="nuitee">Nuitée :</label></td>
+			  <td><input type="number" id="nuitee" name="nuitee" min="0" required></td>
+			</tr>
+			<tr>
+			  <td><label for="etape">Etape :</label></td>
+			  <td><input type="number" id="etape" name="etape" min="0" required></td>
+			</tr>
+			<tr>
+			  <td><label for="km">Km :</label></td>
+			  <td><input type="number" id="km" name="km" min="0" value="" ></td>
+			</tr>
+			<tr>
+			  <td><label for="situation">Situation :</label></td>
+			  <td>
+				<input type="radio" id="valide" name="situation" value="valide" checked>
+				<label for="valide">Validé</label>
+				<input type="radio" id="non-valide" name="situation" value="non-valide">
+				<label for="non-valide">Non validé</label>
+			  </td>
+			</tr>
+			<tr>
+			  <td><label for="justificatifs">Nb Justificatifs :</label></td>
+			  <td><input type="number" id="justificatifs" name="justificatifs" min="0"></td>
+			</tr>
+			<tr>
+			  <td colspan="2"><input type="submit" value="Soumettre la requête"></td>
+			</tr>
+		  </table>
 	</form>
 </body>
 </html>
