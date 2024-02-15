@@ -117,7 +117,7 @@
 			  <td><label for="repas">Repas midi :</label></td>
 			  
 			  <td><label for="nuitee">Nuitée :</label></td>
-			  <td><input type="number" id="nuitee" name="nuitee" min="0" required></td>
+			  
 			
 			  <td><label for="etape">Etape :</label></td>
 			  <td><input type="number" id="etape" name="etape" min="0" required></td>
