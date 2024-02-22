@@ -50,7 +50,7 @@
 <body>
 	
 
-	<form>
+
 		<h1>Validation des frais par visiteur</h1>
 		<label for="visiteur">Choisir le visiteur :</label>
 		<select id="visiteur" name="visiteur">
@@ -60,8 +60,8 @@
 			  
 			  $servername = "localhost";
 			  $username = "root";
-			  $password = "Iroise29";
-			  $dbname = "MediTech";
+			  $password = "Irxfgghise29";
+			  $dbname = "MediTecdfwyhh";
 			  
 			  $conn = new mysqli($servername, $username, $password, $dbname);
 			  
@@ -115,9 +115,9 @@
 		
 			<tr>
 			  <td><label for="repas">Repas midi :</label></td>
-			  
+			 
 			  <td><label for="nuitee">Nuitée :</label></td>
-			  
+			  <td><input type="number" id="nuitee" name="nuitee" min="0" required></td>
 			
 			  <td><label for="etape">Etape :</label></td>
 			  <td><input type="number" id="etape" name="etape" min="0" required></td>
@@ -141,6 +141,6 @@
 			  <td colspan="2"><input type="submit" value="Soumettre la requête"></td>
 			</tr>
 		
-	</form>
+
 </body>
 </html>
