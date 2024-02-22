@@ -50,44 +50,13 @@
 <body>
 	
 <?php
-
-function connecterBaseDeDonnees() {
-    $servername = "localhost";
-    $username = "root";
-    $password = "Iroise29";
-    $dbname = "MediTech";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    return $conn;
-}
-
+include 'connexion.php';
+$conn = connect();
 ?>
-
 		<h1>Validation des frais par visiteur</h1>
 		<label for="visiteur">Choisir le visiteur :</label>
 		<select id="visiteur" name="visiteur">
 			<?php
-			  
-			  
-			  
-			  $servername = "localhost";
-			  $username = "root";
-			  $password = "Iroise29";
-			  $dbname = "MediTech";
-			  
-			  $conn = new mysqli($servername, $username, $password, $dbname);
-			  
-			  
-			  if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			  }
-			  
-			  
 			  $sql = "SELECT VIS_NOM FROM visiteur" 
 					  
 			  if ($conn->query($sql) === TRUE) {
@@ -95,26 +64,24 @@ function connecterBaseDeDonnees() {
 			  } else {
 				echo "Error: " . $sql . "<br>" . $conn->error;
 			  }
-			  
-			  $conn->close();
 			  ?>
 		</select>
 		<label for="mois">Mois :</label>
 		<select id="mois" name="mois">
-			<option value="janvier">Janvier</option>
-			<option value="fevrier">Février</option>
-			<option value="mars">Mars</option>
-			<option value="avril">Avril</option>
-			<option value="mai">Mai</option>
-			<option value="juin">Juin</option>
-			<option value="juillet">Juillet</option>
-			<option value="aout">Aout</option>
-			<option value="septembre">Septembre</option>
-			<option value="octobre">Octobre</option>
-			<option value="novembre">Novembre</option>
-			<option value="Decembre">Décembre</option>
+			<option value="JANVIER">Janvier</option>
+			<option value="FEVRIER">Février</option>
+			<option value="MARS">Mars</option>
+			<option value="AVRIL">Avril</option>
+			<option value="MAI">Mai</option>
+			<option value="JUIN">Juin</option>
+			<option value="JUILLET">Juillet</option>
+			<option value="AOUT">Aout</option>
+			<option value="SEPTEMBRE">Septembre</option>
+			<option value="OCTOBRE">Octobre</option>
+			<option value="NOVEMBRE">Novembre</option>
+			<option value="DECEMBRE">Décembre</option>
 		</select>
-		<select id="mois" name="mois">
+		<select id="annee" name="annee">
 			<option value="janvier">Janvier</option>
 			<option value="fevrier">Février</option>
 			<option value="mars">Mars</option>
@@ -133,19 +100,25 @@ function connecterBaseDeDonnees() {
 			<tr>
 			  <td><label for="repas">Repas midi :</label></td>
 			   <td><input type="number" id="nuitee" name="nuitee" min="0" required></td>
-                       
-                       
+                      <?php 
+                      $conn = connect();
+					  $sql = "SELECT LIG_QTE
+							  FROM ligne_frais_forfait
+							  INNER JOIN fiche_frais ON ligne_frais_forfait.FFR_id = fiche_frais.FFR_ID
+							  WHERE ligne_frais_forfait.FOR_ID = 'NUI'";
+					  
+					  $result = $conn->query($sql);
+					  if ($result === false) {
+						  echo "Error: " . $sql . "<br>" . $conn->error;
+					  } else {
+						  while ($row = $result->fetch_assoc()) {
+							  echo "LIG_QTE: " . $row['LIG_QTE'] . "<br>";
+						  }
+					  }
+					  ?>
 			  <td><label for="nuitee">Nuitée :</label></td>
 			  <td><input type="number" id="nuitee" name="nuitee" min="0" required></td>
-        
-        <? php
-			SELECT LIG_QTE
-      FROM ligne_frais_forfait
-      INNER JOIN fiche_frais 
-      ON ligne_frais_forfait.FFR_id = fiche_frais.FFR_ID
-      WHERE ligne_frais_forfait.FOR_ID = 'NUI';
-       ?>
-
+			
 			  <td><label for="etape">Etape :</label></td>
 			  <td><input type="number" id="etape" name="etape" min="0" required></td>
 			
@@ -168,6 +141,8 @@ function connecterBaseDeDonnees() {
 			  <td colspan="2"><input type="submit" value="Soumettre la requête"></td>
 			</tr>
 		
-
+			<?php 
+			$conn->close();
+			?>
 </body>
 </html>
