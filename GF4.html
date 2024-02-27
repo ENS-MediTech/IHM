@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion des Frais</title>
+    <style>
+        body {
+            background-color: #77aadd;
+            font-family: Arial, sans-serif;
+            margin: 8px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-Left: 0px;
+        }
+        .container {
+            width: 80%;
+            background-color: #77aadd;
+            text-align: left;
+        }
+
+    
+        .title {
+            font-weight: bolder;
+            background-color: white;
+            height: 112px;
+            margin-bottom: 5%;
+            color: #5297ee;
+            font-size: 25px;
+            font-weight: 100;
+        }
+        .section {
+            margin-bottom: 10px;
+            width: 90px;
+        }
+
+        .boxnull {
+            text-align: right;
+            color: white;
+            margin-right: 100px;
+        }   
+        .input-field {
+            width: 100%;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            text-align: center;
+
+        }
+
+        .input-field2 {
+            width: 96px;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            text-align: right;
+        }
+
+        .boxnull2 {
+            box-sizing: border-box;
+            width: 10px;
+            color: white;
+            box-align: center;
+
+        }   
+
+        .section-title {
+            font-weight: bold;
+            text-align: left;
+            color: white;
+            
+        }
+
+        .titrepage {
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .submit-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 2em auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .boxnull3 {
+            text-align: left;
+            color: white;
+        }   
+
+        .input-field3 {
+            width: 96px;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div class="title">Gestion des Frais
+        </div>
+
+            <div class="titrepage">Saisie</div>
+            <div class="boxnull">
+            <ilm>Mois (2 chiffres)</ilm>
+            <input type="text" id="month" name="month" class="input-field2">
+            <ilm>Année (4 chiffres)</ilm>
+            <input type="text" id="year" name="year" class="input-field2">
+        </div>
+        </div>
+
+    
+            <div class="titrepage">Frais au forfait</div>
+
+            <div class="boxnull3">
+            <ilm>repas midi</ilm>
+            <input type="text" id="meal" name="meal" class="input-field3">
+            <br>
+            <label for="nights">Nuitée</label>
+            <input type="text" id="nights" name="nights" class="input-field3">
+            <br>
+            <label for="step">Étape   </label>
+            <input type="text" id="step" name="step" class="input-field3">
+            <br>
+            <label for="km">Km</label>
+            <input type="text" id="km" name="km" class="input-field3">
+        </div>
+    </div>
+        <button class="submit-button">Soumettre la requête</button>
+    </div>
+</body>
+</html>
