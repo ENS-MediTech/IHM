@@ -19,7 +19,7 @@ input {
 <body>
 
 <h2>VISITEUR</h2>
-<form id="formulaireVisiteur">
+<form id="formulaireVisiteur" method="post" action="">
   <label for="id">Identifiant:</label><input type="text" id="id" name="id" value=""><br>
   <label for="nom">Nom:</label><input type="text" id="nom" name="nom" value=""><br>
   <label for="prenom">Prenom:</label><input type="text" id="prenom" name="prenom" value=""><br>
@@ -29,52 +29,23 @@ input {
   <label for="date">Date embauche:</label><input type="text" id="date" name="date" value=""><br>
   <label for="login">login:</label><input type="text" id="login" name="login" value=""><br>
   <label for="mdp">mdp:</label><input type="password" id="mdp" name="mdp"><br>
-  <button type="button" id="ajouter">Ajouter</button>
-  <button type="button" id="modifier">Modifier</button>
+  <button type="submit" name="action" value="ajouter">Ajouter</button>
+  <button type="submit" name="action" value="modifier">Modifier</button>
   <button type="reset" id="reinitialiser">Réinitialiser</button>
 </form>
 
-<script>
-document.getElementById("ajouter").addEventListener("click", function() {
-    ajouterUtilisateur();
-});
-
-document.getElementById("modifier").addEventListener("click", function() {
-    modifierUtilisateur();
-});
-
-function ajouterUtilisateur() {
-    var formulaire = document.getElementById("formulaireVisiteur");
-    var donneesFormulaire = new FormData(formulaire);
-
-    fetch("ajouter_utilisateur.php", {
-        method: "GET",
-        body: donneesFormulaire
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-        formulaire.reset();
-    })
-    .catch(error => console.error("Erreur :", error));
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Vérifier quelle action est demandée (ajouter ou modifier)
+    if (isset($_POST["action"])) {
+        if ($_POST["action"] == "ajouter") {
+            include("ajouter_utilisateur.php");
+        } elseif ($_POST["action"] == "modifier") {
+            include("modifier_utilisateur.php");
+        }
+    }
 }
-
-function modifierUtilisateur() {
-    var formulaire = document.getElementById("formulaireVisiteur");
-    var donneesFormulaire = new FormData(formulaire);
-
-    fetch("ajt_modif_2in1.php", {
-        method: "GET",
-        body: donneesFormulaire
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-        formulaire.reset();
-    })
-    .catch(error => console.error("Erreur :", error));
-}
-</script>
+?>
 
 </body>
 </html>
