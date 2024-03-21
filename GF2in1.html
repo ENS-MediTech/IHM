@@ -19,7 +19,7 @@ input {
 <body>
 
 <h2>VISITEUR</h2>
-<form id="formulaireVisiteur" method="post" action="">
+<form id="formulaireVisiteur" method="GET" action="">
   <label for="id">Identifiant:</label><input type="text" id="id" name="id" value=""><br>
   <label for="nom">Nom:</label><input type="text" id="nom" name="nom" value=""><br>
   <label for="prenom">Prenom:</label><input type="text" id="prenom" name="prenom" value=""><br>
@@ -35,12 +35,12 @@ input {
 </form>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Vérifier quelle action est demandée (ajouter ou modifier)
-    if (isset($_POST["action"])) {
-        if ($_POST["action"] == "ajouter") {
+    if (isset($_GET["action"])) {
+        if ($_GET["action"] == "ajouter") {
             include("ajouter_utilisateur.php");
-        } elseif ($_POST["action"] == "modifier") {
+        } elseif ($_GET["action"] == "modifier") {
             include("modifier_utilisateur.php");
         }
     }
